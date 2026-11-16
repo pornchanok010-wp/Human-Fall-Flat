@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUMAN: FALL FLAT - FUN WORLD</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffdf4;
+    color: #354052;
+}
+
+/* HEADER */
+header {
+    background: #39bdf2;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px #00000015;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffe65c;
+}
+
+/* HOME */
+.hero {
+    min-height: 520px;
+    background:
+    linear-gradient(#1a7eaa66, #1a7eaa66),
+    url("https://cdn.akamai.steamstatic.com/steam/apps/477160/ss_a5a60e90a81f923dd3a523034ecb694b0790859e.1920x1080.jpg?t=1680513738");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero-content {
+    background: #ffffffdc;
+    padding: 40px;
+    border-radius: 25px;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #ff9d24;
+    text-shadow: 2px 2px #ffe16b;
+}
+
+.hero p {
+    font-size: 19px;
+    margin: 20px 0;
+    line-height: 1.7;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffcf45;
+    color: #354052;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #ff9d24;
+    transform: translateY(-4px);
+}
+
+/* SECTION */
+section {
+    padding: 65px 8%;
+}
+
+.title {
+    text-align: center;
+    font-size: 34px;
+    color: #ff9d24;
+    margin-bottom: 35px;
+}
+
+/* ABOUT */
+.about {
+    background: #fff3b8;
+    text-align: center;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.about p {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 5px 15px #00000012;
+    transition: .3s;
+    border-bottom: 6px solid #55c8ed;
+}
+
+.card:nth-child(2) {
+    border-color: #ffcf45;
+}
+
+.card:nth-child(3) {
+    border-color: #8cdb83;
+}
+
+.card:nth-child(4) {
+    border-color: #ff9f9f;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 0 10px 22px #00000020;
+}
+
+.icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #26a9db;
+    margin-bottom: 12px;
+}
+
+/* HOW TO PLAY */
+.how {
+    background: #dff6ff;
+}
+
+/* LEVELS */
+.levels {
+    background: #fff1d5;
+}
+
+/* GALLERY */
+.gallery {
+    background: #e4f8df;
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #00000015;
+    transition: .3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.04);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item p {
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    color: #268dbd;
+}
+
+/* QUIZ */
+.quiz {
+    background: #ffe5ec;
+    text-align: center;
+}
+
+.quiz-box {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px #00000012;
+}
+
+.quiz-box p {
+    font-size: 18px;
+    margin: 20px;
+}
+
+.quiz-box button {
+    margin: 6px;
+}
+
+#result {
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #39bdf2;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    line-height: 2;
+}
+
+/* TOP BUTTON */
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffcf45;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media(max-width: 600px) {
+    header {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        font-size: 13px;
+        margin: 5px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-content {
+        padding: 25px;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">🎮 HUMAN: FALL FLAT</div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#how">HOW TO PLAY</a>
+        <a href="#levels">LEVELS</a>
+        <a href="#gallery">GALLERY</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+    <div class="hero-content">
+        <h1>HUMAN: FALL FLAT</h1>
+        <p>
+            Welcome to the Funny World!
+            <br>
+            Explore, Solve Puzzles and Have Fun!
+        </p>
+        <a href="#about" class="btn">EXPLORE NOW ✨</a>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2 class="title">🌈 ABOUT THE GAME</h2>
+
+    <p>
+        Human: Fall Flat เป็นเกมผจญภัยแนว Puzzle Platformer
+        ที่ผู้เล่นจะได้ควบคุมตัวละครที่มีการเคลื่อนไหวแบบฟิสิกส์
+        สามารถเดิน วิ่ง กระโดด ปีนป่าย และหยิบจับสิ่งของได้
+        ผู้เล่นต้องใช้ความคิดสร้างสรรค์ในการแก้ปริศนา
+        และหาทางผ่านอุปสรรคต่าง ๆ ภายในเกม
+        สามารถเล่นคนเดียวหรือร่วมผจญภัยกับเพื่อนได้
+    </p>
+</section>
+
+<!-- HOW TO PLAY -->
+<section class="how" id="how">
+    <h2 class="title">🎮 HOW TO PLAY</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🕹️</div>
+            <h3>Movement</h3>
+            <p>ควบคุมตัวละครให้เดิน วิ่ง และกระโดด</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧗</div>
+            <h3>Climbing</h3>
+            <p>ใช้มือจับวัตถุเพื่อปีนขึ้นไปยังพื้นที่สูง</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📦</div>
+            <h3>Move Objects</h3>
+            <p>หยิบและเคลื่อนย้ายสิ่งของเพื่อแก้ปริศนา</p>
+        </div>
+    </div>
+</section>
+
+<!-- LEVELS -->
+<section class="levels" id="levels">
+    <h2 class="title">🗺️ GAME LEVELS</h2>
+
+    <div class="cards">
+        <div class="card">
+            <div class="icon">🏰</div>
+            <h3>Castle</h3>
+            <p>สำรวจปราสาทและค้นหาเส้นทางใหม่</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">❄️</div>
+            <h3>Ice Mountain</h3>
+            <p>ผจญภัยในภูเขาหิมะและพื้นที่น้ำแข็ง</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏜️</div>
+            <h3>Desert</h3>
+            <p>แก้ปริศนาในดินแดนทะเลทราย</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏭</div>
+            <h3>Factory</h3>
+            <p>ใช้เครื่องจักรและสิ่งของเพื่อผ่านด่าน</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+    <h2 class="title">📸 GAME GALLERY</h2>
+
+    <div class="cards">
+
+        <div class="gallery-item">
+            <img src=""
+                 alt="Human Fall Flat Desert Level">
+            <p>🏜️ Desert Adventure</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src=""
+                 alt="Human Fall Flat Waterfall">
+            <p>🌊 Waterfall Adventure</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src=""
+                 alt="Human Fall Flat Desert Puzzle">
+            <p>🎯 Desert Puzzle</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src=""
+                 alt="Human Fall Flat Snow Level">
+            <p>❄️ Snow Adventure</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src=""
+                 alt="Human Fall Flat Viking Boat">
+            <p>🚢 Viking Adventure</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src=""
+                 alt="Human Fall Flat Boat">
+            <p>⛵ Boat Adventure</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h2>HUMAN: FALL FLAT</h2>
+    <p>Funny Adventure - Explore the World!</p>
+    <p>เว็บไซต์แนะนำเกม</p>
+    <p>© 2026 HUMAN: FALL FLAT FAN WEBSITE</p>
+</footer>
+
+<button id="topBtn" onclick="goTop()">↑</button>
+
+</body>
+</html>
